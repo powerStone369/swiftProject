@@ -1,0 +1,40 @@
+import UIKit
+
+struct Dart{
+
+    var round: Int = 0
+    var round_: Int = 0
+    var totalScore: Int = 0
+
+    func dartGame() -> Int{
+        let ranSDT = Int.random(in: 1...100)
+        var score = Int.random(in: 0...21)
+        var multiple : Int
+        //multiple calculation
+        if 1 <= ranSDT && ranSDT <= 10 {
+            multiple = 3
+        }
+        else if 10 < ranSDT && ranSDT <= 30 {
+            multiple = 2
+        }
+        else {
+            multiple = 1
+        }
+        //multiple exception
+        if score == 0 || score == 21 {
+            multiple = 1
+        }
+        if score == 21 {
+            score = 50
+        }
+       
+     
+        return multiple*score
+    }
+    round_ += 1
+}
+let a = Dart()
+
+    print(a)
+
+
